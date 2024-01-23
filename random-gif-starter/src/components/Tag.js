@@ -1,35 +1,44 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Spinner from './Spinner';
 import useGif from '../hooks/useGif';
 
 const Tag = () => {
-  const [dynamicText, setdynamicText] = useState('')
+  const [dynamicText, setDynamicText] = useState('');
+  const { loader, gif, fetchUrl } = useGif(dynamicText);
 
-  const {loader,gif,fetchUrl} = useGif(dynamicText)
-
-  function inputChangeHandler(event){
-    setdynamicText(event.target.value)
-  }
+  const handleInputChange = (event) => {
+    setDynamicText(event.target.value);
+  };
 
   return (
-    <div className="bg-green-700 w-3/4 mx-auto mt-10 p-4 text-center rounded-lg">
-      <div className="font-bold text-2xl mb-4">A {dynamicText} Gif</div>
-      <div className="flex justify-center items-center">
-        {loader ? <Spinner /> : <img src={gif} alt="Random Gif" className="max-w-full rounded-lg" />}
+    <div className="bg-blue-500 min-h-screen flex flex-col items-center justify-center text-white">
+      <div className="bg-yellow-500 w-3/4 p-8 text-center rounded-lg shadow-lg">
+        <h1 className="font-extrabold text-4xl mb-4">✨ Find Funky Gifs : {dynamicText} ✨</h1>
+        <div className="flex justify-center items-center">
+          {loader ? <Spinner /> : <img src={gif} alt="Random Gif" className="max-w-full rounded-lg" />}
+        </div>
+        <div className="mt-6 text-black">
+          <input
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Enter a magical keyword..."
+            className="w-full px-4 py-2 rounded-md focus:outline-none focus:border-yellow-700 transition duration-300"
+          />
+        </div>
+        <button
+          onClick={fetchUrl}
+          className="mt-4 bg-yellow-700 text-white px-6 py-3 rounded-full hover:bg-yellow-800 transition duration-300"
+        >
+          Search Magical GIF
+        </button>
       </div>
-      <div className='px-4 py-2 mt-4 rounded-md hover:bg-gray-300 transition duration-300 font-black'><input onChange={inputChangeHandler} type='text'></input></div>
-      <button
-        onClick={() => {
-          fetchUrl();
-        }}
-        className="bg-white opacity-90 px-4 py-2 mt-4 rounded-md hover:bg-gray-300 transition duration-300"
-      >
-        Generate GIF
-      </button>
+      <div className="mt-8 text-white flex flex-col items-center">
+        <p>Explore more magic below</p>
+        <div className="animate-bounce mt-2 text-3xl">&#x2193;</div>
+      </div>
     </div>
   );
 };
 
 export default Tag;
-

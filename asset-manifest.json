@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/random-gif-starter/static/css/main.4e16747e.css",
-    "main.js": "/random-gif-starter/static/js/main.166d579b.js",
-    "index.html": "/random-gif-starter/index.html",
-    "main.4e16747e.css.map": "/random-gif-starter/static/css/main.4e16747e.css.map",
-    "main.166d579b.js.map": "/random-gif-starter/static/js/main.166d579b.js.map"
+    "main.css": "/React_Projects/static/css/main.4e16747e.css",
+    "main.js": "/React_Projects/static/js/main.166d579b.js",
+    "index.html": "/React_Projects/index.html",
+    "main.4e16747e.css.map": "/React_Projects/static/css/main.4e16747e.css.map",
+    "main.166d579b.js.map": "/React_Projects/static/js/main.166d579b.js.map"
   },
   "entrypoints": [
     "static/css/main.4e16747e.css",

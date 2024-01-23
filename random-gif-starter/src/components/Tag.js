@@ -14,7 +14,7 @@ const Tag = () => {
   return (
     <div className="bg-blue-500 min-h-screen flex flex-col items-center justify-center text-white">
       <div className="bg-yellow-500 w-3/4 p-8 text-center rounded-lg shadow-lg">
-        <h1 className="font-extrabold text-4xl mb-4">✨ Find Funky Gifs : {dynamicText} ✨</h1>
+        <h1 className="font-extrabold text-4xl mb-4">✨ Find Gifs : {dynamicText} ✨</h1>
         <div className="flex justify-center items-center">
           {loader ? <Spinner /> : <img src={gif} alt="Random Gif" className="max-w-full rounded-lg" />}
         </div>
